@@ -1,18 +1,25 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reaction Timer</title>
+	<link rel="stylesheet" href="style.css" class="style">
+</head>
+<body>
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+	<h1>Test Your Reactions!</h1>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+	<p><i>The average reaction time for humans is 0.25 seconds to a visual stimulus</i></p>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+	<p>Click on the boxes and circles as quickly as you can</p>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+	<h4>Your time: <span id='time'></span></h4>
+
+	<h4>Best time: <span id='best'></span></h4>
+
+	<div id="shape" class="square"></div>
+
+<script type="text/javascript" src="script.js"></script>
+	
+</body>
+</html>
