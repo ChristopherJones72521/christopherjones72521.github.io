@@ -19,7 +19,17 @@
 		<div class="score">
 			Percentage correct: <span id="percentage"></span>
 		</div>
-		<div id="focusCard" class="question card"></div>
+
+		<!-- Main card in play -->
+		<!-- <div id="focusCard"> -->
+		<div id="focusCard" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+			<!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');"> -->
+			  <div class="flipper">
+			    <div class="front"></div>
+			    <div class="back"></div>
+			  </div>
+			<!-- </div>			 -->
+		</div>
 		
 		<p id="turnCounter">Turn: <span id="countTurn"></span></p>
 
