@@ -2,16 +2,38 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Fun with AJAX</title>
-	<link rel="stylesheet" href="style.css" class="style">
+	<title>Intuition Test | Clairvoyant Test</title>
+	<link rel="icon" href="favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
+	<link rel="stylesheet" href="style.css" class="css">
 </head>
 <body>
-<p>The contents of the file goes here: <span id="contents"></span></p>
-<button id="clicky">Click here for the file data</button>
+	<h1 class="title">Are you clairvoyant?</h1>
+	<h2 class="description">Zener cards are cards used to conduct experiments for extrasensory perception (ESP), most often clairvoyance. The odds of guessing are 20%, if you exceed this number, you may possess a high degree of intuition or clairvoyant ability. </br></br>If you consistently choose over 20%, would you email next week's lottery numbers?</h2>
+	<div id="mainbody">
+		<div class="score">
+			Your Score: <span id="scoretotal"></span>
+		</div>
+		<div class="score">
+			Percentage correct: <span id="percentage"></span>
+		</div>
+		<div id="focusCard" class="question card"></div>
+		
+		<p id="turnCounter">Turn: <span id="countTurn"></span></p>
 
-<script type="text/javascript" src="script.js"></script>
-	
+		<div id="tinyContainer">
+			<div class="tinyCard star"></div>
+			<div class="tinyCard square"></div>
+			<div class="tinyCard circle"></div>
+			<div class="tinyCard wave"></div>
+			<div class="tinyCard cross"></div>
+		</div>
+	</div>
+
+
+	<script text="text/javascript" src="script.js"></script>
 </body>
 </html>
+

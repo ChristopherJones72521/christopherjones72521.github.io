@@ -1,0 +1,112 @@
+body {
+	margin: 0;
+	background-color: #C4B8F5;
+	font-family: 'Oxygen', Helvetica, sans-serif;
+}
+
+#mainbody {
+	position: relative;
+	width: 100%
+}
+
+.score {
+	position: relative;
+	margin-right: 50px;
+	font-size: 36px;
+	float: right;
+	clear: right;
+	color: #FFF;
+}
+
+.description {
+	width: 33%;
+	position: relative;
+	float: left;
+	font-size: 18px;
+	margin: 50px;
+	margin-top: 0;
+}
+
+#turnCounter {
+	text-align: center;
+	margin-top: -40px;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+/*implement flip animation (https://davidwalsh.name/css-flip)*/
+.card {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: 200px 300px;
+	width: 200px;
+	height: 300px;
+	margin: 50px auto;
+}
+
+.tinyCard{
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: 100px 150px;
+	width: 100px;
+	height: 150px;
+	margin: 0 30px;
+	float: left;
+}
+
+#tinyContainer {
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.star.tinyCard {
+	background-image: url("starCard.svg");
+}
+
+.square.tinyCard {
+	background-image: url("squareCard.svg");
+}
+
+.circle.tinyCard {
+	background-image: url("circleCard.svg");
+}
+
+.wave.tinyCard {
+	background-image: url("waveCard.svg");
+}
+
+.cross.tinyCard {
+	background-image: url("crossCard.svg");
+}
+
+.question.card {
+	background-image: url("questionCard.svg");
+}
+
+.star.card {
+	background-image: url("starCard.svg");
+}
+
+.square.card {
+	background-image: url("squareCard.svg");
+}
+
+.circle.card {
+	background-image: url("circleCard.svg");
+}
+
+.wave.card {
+	background-image: url("waveCard.svg");
+}
+
+.cross.card {
+	background-image: url("crossCard.svg");
+}
+
+.title {
+	margin: 50px;
+	color: white;
+	font-size: 3em;
+	position: relative;
+}
