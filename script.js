@@ -58,7 +58,7 @@ function cardFlip(){
 			cardFlip();
 			// After final turn, display result and scroll down
 			} else {
-				$('html, body').delay(1000).animate({
+				$('html, body').delay(100).animate({
 					scrollTop: $("#results").offset().top
 				},1000);
 			}
