@@ -1,3 +1,5 @@
+/* So I prefer camelCase... */
+
 body {
 	margin: 0;
 	background-color: #C4B8F5;
@@ -6,23 +8,22 @@ body {
 
 #mainbody {
 	position: relative;
-	width: 100%
+	width: 100%;
+	height: 100vh;
 }
 
 #focusCard {
 	margin: 50px auto;
 }
 
-.score {
+#title {
+	margin: 50px;
+	color: white;
+	font-size: 3em;
 	position: relative;
-	margin-right: 50px;
-	font-size: 36px;
-	float: right;
-	clear: right;
-	color: #FFF;
 }
 
-.description {
+#description {
 	width: 33%;
 	position: relative;
 	float: left;
@@ -37,6 +38,31 @@ body {
 	margin-bottom: 40px;
 	width: 100%;
 }
+
+.score {
+	position: relative;
+	margin-right: 50px;
+	font-size: 36px;
+	float: right;
+	clear: right;
+	color: #FFF;
+}
+
+#tinyContainer {
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+}
+
+#results {
+	position: relative;
+	float: bottom;
+	width: 100%;
+	height: 100vh;
+	background-color: #F0F25A;
+}
+
+/*------------------[Card related CSS]-------------------------*/
 
 .card {
 	position: relative;
@@ -55,12 +81,6 @@ body {
 	height: 150px;
 	margin: 0 30px;
 	float: left;
-}
-
-#tinyContainer {
-	position: relative;
-	width: 800px;
-	margin: 0 auto;
 }
 
 .star.tinyCard {
@@ -107,13 +127,6 @@ body {
 	background-image: url("crossCard.svg");
 }
 
-.title {
-	margin: 50px;
-	color: white;
-	font-size: 3em;
-	position: relative;
-}
-
 /*------------------[Card flipping related CSS]-------------------------*/
 /*Credit: Dave Walsh (https://davidwalsh.name/css-flip)*/
 
@@ -145,13 +158,6 @@ body {
     -o-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
-
-/*.flip {
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-}*/
 
 .flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
 	-webkit-transform: rotateY(180deg);

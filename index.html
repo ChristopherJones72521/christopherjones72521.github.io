@@ -10,28 +10,25 @@
 	<link rel="stylesheet" href="style.css" class="css">
 </head>
 <body>
-	<h1 class="title">Are you clairvoyant?</h1>
-	<h2 class="description">Zener cards are cards used to conduct experiments for extrasensory perception (ESP), most often clairvoyance. The odds of guessing are 20%, if you exceed this number, you may possess a high degree of intuition or clairvoyant ability. </br></br>If you consistently choose over 20%, would you email next week's lottery numbers?</h2>
+	<h1 id="title">Are you clairvoyant?</h1>
+	<h2 id="description">Zener cards are cards used to conduct experiments for extrasensory perception (ESP), most often clairvoyance. The odds of guessing are 20%, if you exceed this number, you may possess a high degree of intuition or clairvoyant ability. </br></br>If you consistently choose over 20%, would you email next week's lottery numbers?</h2>
 	<div id="mainbody">
 		<div class="score">
-			Your Score: <span id="scoretotal"></span>
+			Your Score: <span id="scoretotal">0/25</span>
 		</div>
 		<div class="score">
-			Percentage correct: <span id="percentage"></span>
+			Percentage correct: <span id="percentage">0%</span>
 		</div>
 
 		<!-- Main card in play -->
-		<!-- <div id="focusCard"> -->
 		<div id="focusCard" class="flip-container" ontouchstart="this.classList.toggle('hover');">
-			<!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');"> -->
-			  <div class="flipper">
-			    <div class="front"></div>
-			    <div class="back"></div>
-			  </div>
-			<!-- </div>			 -->
+		  <div class="flipper">
+		    <div class="front"></div>
+		    <div class="back"></div>
+		  </div>
 		</div>
 		
-		<p id="turnCounter">Turn: <span id="countTurn"></span></p>
+		<p id="turnCounter">Turn: <span id="countTurn">0/25</span></p>
 
 		<div id="tinyContainer">
 			<div class="tinyCard star"></div>
@@ -41,6 +38,7 @@
 			<div class="tinyCard cross"></div>
 		</div>
 	</div>
+	<div id="results"></div>
 
 
 	<script text="text/javascript" src="script.js"></script>

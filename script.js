@@ -22,17 +22,8 @@ function compareSelection(selectedCardClass, currentCardClass){
 		}
 }
 
-// // Randomly assigns class to focus card
-// function randomCard(){
-// 	// $("#focusCard").attr("class", function(){ 
-// 	$('.back').attr("class", function(){	
-// 		var cards = ["star card", "square card", "circle card", "wave card", "cross card"];
-// 		var cardClass = cards[Math.floor(Math.random() * 5)];
-// 		return cardClass;
-// 	});
-// }
-
-function randomCard2(){
+// Draws card at random: Changes background property of .back class each click
+function randomCard(){
 	function randomizer(){
 		var cards = ['url("starCard.svg")', 'url("squareCard.svg")', 'url("circleCard.svg")', 'url("waveCard.svg")', 'url("crossCard.svg")'];
 		var cardImage = cards[Math.floor(Math.random() * 5)];
@@ -42,93 +33,33 @@ function randomCard2(){
 	"backgroundRepeat" : "no-repeat"})
 }
 
-// tracks progress in test
-if(turn < 25){
-	// Select star card
-	$('.star.tinyCard').click(function(){
-		randomCard2();
-		var currentCard = $('.back').css('background');
-		var regex = /star/;
-		var psychicCard = currentCard.match(regex);
-		compareSelection("star", psychicCard)
-		$('.flip-container').toggleClass('flip');
-		$('.flip-container').delay(2000).queue(function(){
-			$(this).toggleClass('flip', randomCard2);
-			// randomCard2(); // You need this to work
-			$(this).dequeue()
-		})
-		++turn
-		$('#countTurn').html(turn + "/25");
+// Triggers card flip and increments turn
+// Credit: Dave Walsh (https://davidwalsh.name/css-flip)
+function cardFlip(){
+	$('.flip-container').toggleClass('flip');
+	$('.flip-container').delay(2000).queue(function(){
+		$(this).toggleClass('flip', randomCard);
+		$(this).dequeue()
 	})
-
-	// Select square card
-	$('.square.tinyCard').click(function(){
-		randomCard2();
-		var currentCard = $('.back').css('background');
-		var regex = /square/;
-		var psychicCard = currentCard.match(regex);
-		compareSelection("square", psychicCard)
-		$('.flip-container').toggleClass('flip');
-		$('.flip-container').delay(2000).queue(function(){
-			$(this).toggleClass('flip', randomCard2);
-			// randomCard2(); // You need this to work
-			$(this).dequeue()
-		})
-		++turn
-		$('#countTurn').html(turn + "/25");
-	})
-
-	// Select circle card
-	$('.circle.tinyCard').click(function(){
-		randomCard2();
-		var currentCard = $('.back').css('background');
-		var regex = /circle/;
-		var psychicCard = currentCard.match(regex);
-		compareSelection("circle", psychicCard)
-		$('.flip-container').toggleClass('flip');
-		$('.flip-container').delay(2000).queue(function(){
-			$(this).toggleClass('flip', randomCard2);
-			// randomCard2(); // You need this to work
-			$(this).dequeue()
-		})
-		++turn
-		$('#countTurn').html(turn + "/25");
-	})
-
-	// Select wave card
-	$('.wave.tinyCard').click(function(){
-		randomCard2();
-		var currentCard = $('.back').css('background');
-		var regex = /wave/;
-		var psychicCard = currentCard.match(regex);
-		compareSelection("wave", psychicCard)
-		
-		$('.flip-container').toggleClass('flip');
-		$('.flip-container').delay(2000).queue(function(){
-			$(this).toggleClass('flip', randomCard2);
-			// randomCard2(); // You need this to work
-			$(this).dequeue()
-		})
-		++turn
-		$('#countTurn').html(turn + "/25");
-	})
-
-	// Select cross card
-	$('.cross.tinyCard').click(function(){
-		randomCard2();
-		var currentCard = $('.back').css('background');
-		var regex = /cross/;
-		var psychicCard = currentCard.match(regex);
-		compareSelection("cross", psychicCard)
-		$('.flip-container').toggleClass('flip');
-		$('.flip-container').delay(2000).queue(function(){
-			$(this).toggleClass('flip', randomCard2);
-			// randomCard2(); // You need this to work
-			$(this).dequeue()
-		})
-		++turn
-		$('#countTurn').html(turn + "/25");
-	})
-} else {
-	alert("Your score is " + totalScore + "/25")
+	++turn
+	$('#countTurn').html(turn + "/25");
 }
+
+// When a card is selected, this runs all necessary functions
+	$('.tinyCard').click(function(){
+		if(turn<25){
+			randomCard();
+			var currentCard = $('.back').css('background');
+			var cardClicked = $(this).attr('class');
+			var regex = /(star|circle|square|waves|cross)/;
+			var thisCard = String(cardClicked.match(regex));
+			var psychicCard = String(currentCard.match(regex));
+			compareSelection(thisCard, psychicCard);
+			cardFlip();
+			// After final turn, display result and scroll down
+			} else {
+				$('html, body').delay(1000).animate({
+					scrollTop: $("#results").offset().top
+				},1000);
+			}
+	})
