@@ -47,7 +47,7 @@ function cardFlip(){
 
 // When a card is selected, this runs all necessary functions
 	$('.tinyCard').click(function(){
-		if(turn<25){
+		if(turn<5){
 			randomCard();
 			var currentCard = $('.back').css('background');
 			var cardClicked = $(this).attr('class');
@@ -55,6 +55,7 @@ function cardFlip(){
 			var thisCard = String(cardClicked.match(regex));
 			var psychicCard = String(currentCard.match(regex));
 			compareSelection(thisCard, psychicCard);
+			calcProbability(totalScore);
 			cardFlip();
 			// After final turn, display result and scroll down
 			} else {
@@ -63,3 +64,27 @@ function cardFlip(){
 				},1000);
 			}
 	})
+
+// calculates n!
+function factorial(n) {
+  if (n < 0) {
+    return;
+  }
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n -1);
+}
+
+// Calculates the probability of the user guessing correctly
+function calcProbability(totalScore){
+	var combinatoric = (factorial(turn)/(factorial(turn - totalScore) * factorial(totalScore)));
+	var probOccur = ((0.20)^turn);
+	var notOccur = ((0.80)^(turn - totalScore));
+	var probability = (combinatoric * probOccur * notOccur);
+	console.log(probOccur);
+	console.log(notOccur);
+	console.log(combinatoric);
+	console.log(probability);
+	// return combinatoric;
+}
