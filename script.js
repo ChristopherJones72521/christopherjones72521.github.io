@@ -9,7 +9,7 @@
 //
 // The NSA has not reviewed this document
 
-var totalScore = 0.0;
+var totalScore = 0;
 var turn = 1;
 var totalChance = 0.0;
 
@@ -47,27 +47,29 @@ function cardFlip(){
 }
 
 // When a card is selected, this runs all necessary functions
-	$('.tinyCard').click(function(){
-		if(turn<25){
-			randomCard();
-			var currentCard = $('.back').css('background');
-			var cardClicked = $(this).attr('class');
-			var regex = /(star|circle|square|waves|cross)/;
-			var thisCard = String(cardClicked.match(regex));
-			var psychicCard = String(currentCard.match(regex));
-			compareSelection(thisCard, psychicCard);
-			// calcProbability();
-			cardFlip();
-			// After final turn, display result and scroll down
-			} else {
-				createDistribution();
-				$('html, body').delay(100).animate({
-					scrollTop: $("#results").offset().top
-				},1000);
-				$('#finalScore').html(totalScore);
-				$('#Percentile').html(String(Math.round(totalChance*100)) + " percentile!");
-			}
-	})
+$('.tinyCard').click(function(){
+	if(turn<25){
+		randomCard();
+		var currentCard = $('.back').css('background');
+		var cardClicked = $(this).attr('class');
+		var regex = /(star|circle|square|waves|cross)/;
+		var thisCard = String(cardClicked.match(regex));
+		var psychicCard = String(currentCard.match(regex));
+		compareSelection(thisCard, psychicCard);
+		// calcProbability();
+		cardFlip();
+		// After final turn, display result and scroll down
+		} else {
+			createDistribution();
+			$('html, body').delay(100).animate({
+				scrollTop: $("#results").offset().top
+			},1000);
+			$('#finalScore').html(totalScore);
+			$('#Percentile').html(String(Math.round(totalChance*100)) + "% of other people!");
+			// everytime there is a click, 100% of the answer is added.
+			// create a switch to add the appropriate suffix to the number 
+		}
+})
 
 // calculates n!
 function factorial(n) {
@@ -94,7 +96,6 @@ function createDistribution(){
 		for(var i=0;i<=totalScore;i++){
 			totalChance += exactChance(i);
 		}
-		console.log("You fall into the: " + String(Math.round(totalChance*100)) + " percentile!");
 	}
 	calcScores();
 	// The percentile will be += the percentages. Run up until the total score and increment. 
