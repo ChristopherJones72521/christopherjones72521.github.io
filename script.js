@@ -9,8 +9,8 @@
 //
 // The NSA has not reviewed this document
 
-var totalScore = 0;
-var turn = 0;
+var totalScore = 0.0;
+var turn = 0.0;
 
 // This function compares the selection to the current card
 function compareSelection(selectedCardClass, currentCardClass){
@@ -55,7 +55,7 @@ function cardFlip(){
 			var thisCard = String(cardClicked.match(regex));
 			var psychicCard = String(currentCard.match(regex));
 			compareSelection(thisCard, psychicCard);
-			calcProbability(totalScore);
+			calcProbability();
 			cardFlip();
 			// After final turn, display result and scroll down
 			} else {
@@ -77,14 +77,13 @@ function factorial(n) {
 }
 
 // Calculates the probability of the user guessing correctly
-function calcProbability(totalScore){
+function calcProbability(){
 	var combinatoric = (factorial(turn)/(factorial(turn - totalScore) * factorial(totalScore)));
-	var probOccur = ((0.20)^turn);
-	var notOccur = ((0.80)^(turn - totalScore));
+	var probOccur = Math.pow(0.20, turn);
+	var notOccur = Math.pow(0.80, turn - totalScore);
 	var probability = (combinatoric * probOccur * notOccur);
-	console.log(probOccur);
-	console.log(notOccur);
-	console.log(combinatoric);
-	console.log(probability);
+	var prob = String(probability * 100) + "%";
+	console.log(prob);
+
 	// return combinatoric;
 }
