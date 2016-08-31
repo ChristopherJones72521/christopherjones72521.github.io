@@ -17,7 +17,7 @@ var totalChance = 0.0;
 function compareSelection(selectedCardClass, currentCardClass){
 	if(selectedCardClass == currentCardClass){
 			totalScore += 1;
-			var percentageCorrect = Math.floor((totalScore / turn) * 100);
+			var percentageCorrect = Math.floor((totalScore / 25) * 100);
 			$('#scoretotal').html(totalScore + "/25");
 			$('#percentage').html(percentageCorrect +'%');
 		}
