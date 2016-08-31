@@ -11,6 +11,7 @@
 
 var totalScore = 0.0;
 var turn = 1;
+var totalChance = 0.0;
 
 // This function compares the selection to the current card
 function compareSelection(selectedCardClass, currentCardClass){
@@ -78,15 +79,36 @@ function factorial(n) {
 
 // Calculates the probability of the user guessing correctly
 function calcProbability(){
-	var combinatoric = (factorial(25)/(factorial(totalScore) * factorial(25 - totalScore)));
+	var combinatoric = (factorial(turn)/(factorial(totalScore) * factorial(turn - totalScore)));
 	var probOccur = Math.pow(0.20, turn);
 	var notOccur = Math.pow(0.80, (turn - totalScore));
 	var numberOfPossibleOutcomes = Math.pow(5, turn);
 	var probability = (combinatoric * probOccur * notOccur);
 	var prob = "The probability of this event occuring by chance is " + String((probability * 100).toFixed(6)) + "%";
 	var altProb = "The alternative calculation is " + String((combinatoric/numberOfPossibleOutcomes) * 100) + "%";
-	console.log(combinatoric);
-	console.log(prob);
-	console.log(altProb);
+	// totalChance += ((combinatoric/numberOfPossibleOutcomes) * 100);
+	totalChance += probability * 100;
+	// console.log(probability * 100);
+	// console.log(totalChance);
+	createDistribution();
+}
 
+function createDistribution(){
+	var numberOfPossibleOutcomes = Math.pow(5, turn);
+
+	function choose(score) {
+		return factorial(25) / (factorial(score) * factorial(25 - score));
+	}
+
+	function exactChance(score) {
+		return Math.pow(0.20, score) * Math.pow(0.80, 25 - score) * choose(score);
+		// return choose(score) / numberOfPossibleOutcomes;
+	}
+
+	function calcScores(){
+		for(var i=0;i<=25;i++){
+			console.log(String(i) + ": " + String(Math.round(exactChance(i)*100)));
+		}
+	}
+	calcScores();
 }
