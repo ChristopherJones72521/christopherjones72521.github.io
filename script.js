@@ -10,13 +10,13 @@
 // The NSA has not reviewed this document
 
 var totalScore = 0.0;
-var turn = 0.0;
+var turn = 1;
 
 // This function compares the selection to the current card
 function compareSelection(selectedCardClass, currentCardClass){
 	if(selectedCardClass == currentCardClass){
 			totalScore += 1;
-			var percentageCorrect = Math.floor((totalScore / 25) * 100);
+			var percentageCorrect = Math.floor((totalScore / turn) * 100);
 			$('#scoretotal').html(totalScore + "/25");
 			$('#percentage').html(percentageCorrect +'%');
 		}
@@ -47,7 +47,7 @@ function cardFlip(){
 
 // When a card is selected, this runs all necessary functions
 	$('.tinyCard').click(function(){
-		if(turn<5){
+		if(turn<25){
 			randomCard();
 			var currentCard = $('.back').css('background');
 			var cardClicked = $(this).attr('class');
@@ -78,12 +78,15 @@ function factorial(n) {
 
 // Calculates the probability of the user guessing correctly
 function calcProbability(){
-	var combinatoric = (factorial(turn)/(factorial(turn - totalScore) * factorial(totalScore)));
+	var combinatoric = (factorial(25)/(factorial(totalScore) * factorial(25 - totalScore)));
 	var probOccur = Math.pow(0.20, turn);
-	var notOccur = Math.pow(0.80, turn - totalScore);
+	var notOccur = Math.pow(0.80, (turn - totalScore));
+	var numberOfPossibleOutcomes = Math.pow(5, turn);
 	var probability = (combinatoric * probOccur * notOccur);
-	var prob = String(probability * 100) + "%";
+	var prob = "The probability of this event occuring by chance is " + String((probability * 100).toFixed(6)) + "%";
+	var altProb = "The alternative calculation is " + String((combinatoric/numberOfPossibleOutcomes) * 100) + "%";
+	console.log(combinatoric);
 	console.log(prob);
+	console.log(altProb);
 
-	// return combinatoric;
 }
