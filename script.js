@@ -56,13 +56,16 @@ function cardFlip(){
 			var thisCard = String(cardClicked.match(regex));
 			var psychicCard = String(currentCard.match(regex));
 			compareSelection(thisCard, psychicCard);
-			calcProbability();
+			// calcProbability();
 			cardFlip();
 			// After final turn, display result and scroll down
 			} else {
+				createDistribution();
 				$('html, body').delay(100).animate({
 					scrollTop: $("#results").offset().top
 				},1000);
+				$('#finalScore').html(totalScore);
+				$('#Percentile').html(String(Math.round(totalChance*100)) + " percentile!");
 			}
 	})
 
@@ -77,38 +80,22 @@ function factorial(n) {
   return n * factorial(n -1);
 }
 
-// Calculates the probability of the user guessing correctly
-function calcProbability(){
-	var combinatoric = (factorial(turn)/(factorial(totalScore) * factorial(turn - totalScore)));
-	var probOccur = Math.pow(0.20, turn);
-	var notOccur = Math.pow(0.80, (turn - totalScore));
-	var numberOfPossibleOutcomes = Math.pow(5, turn);
-	var probability = (combinatoric * probOccur * notOccur);
-	var prob = "The probability of this event occuring by chance is " + String((probability * 100).toFixed(6)) + "%";
-	var altProb = "The alternative calculation is " + String((combinatoric/numberOfPossibleOutcomes) * 100) + "%";
-	// totalChance += ((combinatoric/numberOfPossibleOutcomes) * 100);
-	totalChance += probability * 100;
-	// console.log(probability * 100);
-	// console.log(totalChance);
-	createDistribution();
-}
-
+// Discover the odds of each outcome and calculate percentile
 function createDistribution(){
-	var numberOfPossibleOutcomes = Math.pow(5, turn);
-
 	function choose(score) {
 		return factorial(25) / (factorial(score) * factorial(25 - score));
 	}
 
 	function exactChance(score) {
 		return Math.pow(0.20, score) * Math.pow(0.80, 25 - score) * choose(score);
-		// return choose(score) / numberOfPossibleOutcomes;
 	}
 
-	function calcScores(){
-		for(var i=0;i<=25;i++){
-			console.log(String(i) + ": " + String(Math.round(exactChance(i)*100)));
+	function calcScores(){ // Create an if statement for percentages less than 0% and over 100%
+		for(var i=0;i<=totalScore;i++){
+			totalChance += exactChance(i);
 		}
+		console.log("You fall into the: " + String(Math.round(totalChance*100)) + " percentile!");
 	}
 	calcScores();
+	// The percentile will be += the percentages. Run up until the total score and increment. 
 }

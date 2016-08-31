@@ -60,6 +60,16 @@ body {
 	width: 100%;
 	height: 100vh;
 	background-color: #F0F25A;
+	padding-top: 100px;
+}
+
+#resultSquare {
+	position: relative;
+	width: 800px;
+	height: 400px;
+	border: 10px solid #000;
+	margin: 0 auto;
+	padding: 100px;
 }
 
 /*------------------[Card related CSS]-------------------------*/
