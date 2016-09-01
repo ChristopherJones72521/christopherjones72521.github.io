@@ -149,20 +149,11 @@ body {
     transform-style: preserve-3d;
 }
 
-/* flip the pane when hovered */
-/*  UPDATED! flip the pane when hovered (IE Compatability code) */
-.flip-container:hover .back {
-	transform: rotateY(0deg);
-}
-.flip-container:hover .front {
-    transform: rotateY(180deg);
-}
-
 .flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
-	-webkit-transform: rotateY(-180deg);
-	-moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
-	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
 .flip-container, .front, .back {
@@ -193,8 +184,7 @@ body {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-    transition: 0.6s;
+    -o-backface-visibility: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -212,10 +202,10 @@ body {
 
 /* back, initially hidden pane */
 .back {
-	-webkit-transform: rotateY(-180deg);
-	-moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
-	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 
 	background: url("questionCard.svg");
 	background-size: 200px 300px;
