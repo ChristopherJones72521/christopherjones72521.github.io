@@ -100,3 +100,10 @@ function createDistribution(){
 	calcScores();
 	// The percentile will be += the percentages. Run up until the total score and increment. 
 }
+
+if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+  {
+      alert('IE');
+  } else {
+  	alert("Not IE");
+  }
