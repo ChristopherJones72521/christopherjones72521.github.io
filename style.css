@@ -194,6 +194,7 @@ body {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
+    transition: 1.6s;
 	position: absolute;
 	top: 0;
 	left: 0;
