@@ -151,10 +151,10 @@ body {
 
 /* flip the pane when hovered */
 /*  UPDATED! flip the pane when hovered (IE Compatability code) */
-.flip-container:hover .back {
+.flip-container:hover .back .flipper{
 	transform: rotateY(0deg);
 }
-.flip-container:hover .front {
+.flip-container:hover .front .flipper{
     transform: rotateY(180deg);
 }
 
