@@ -103,7 +103,7 @@ function createDistribution(){
 
 if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
   {
-      alert('IE');
+      alert('This application will not run on IE. Use Chrome or Firefox like an adult');
   } else {
   	alert("Not IE");
   }
