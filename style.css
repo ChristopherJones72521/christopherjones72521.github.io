@@ -140,33 +140,22 @@ body {
 /*------------------[Card flipping related CSS]-------------------------*/
 /*Credit: Dave Walsh (https://davidwalsh.name/css-flip)*/
 
-#flipToggle {
-	margin: 50px;
-	font-family: sans-serif;
-	padding: 20px;
-	background-color: red;
-	color: white;
-	border: none;
-	outline: none;
-}
-
 /* entire container, keeps perspective */
 .flip-container {
 	-webkit-perspective: 1000;
     -moz-perspective: 1000;
     -o-perspective: 1000;
     perspective: 1000;
+    transform-style: preserve-3d;
 }
 
 /* flip the pane when hovered */
-.flip-container:hover 
-.flipper, 
-.flip-container.hover 
-.flipper {
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+/*  UPDATED! flip the pane when hovered (IE Compatability code) */
+.flip-container:hover .back {
+	transform: rotateY(0deg);
+}
+.flip-container:hover .front {
+    transform: rotateY(180deg);
 }
 
 .flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
@@ -222,10 +211,10 @@ body {
 
 /* back, initially hidden pane */
 .back {
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
 
 	background: url("questionCard.svg");
 	background-size: 200px 300px;

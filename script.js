@@ -48,7 +48,7 @@ function cardFlip(){
 
 // When a card is selected, this runs all necessary functions
 $('.tinyCard').click(function(){
-	if(turn<25){
+	if(turn<25){ // Fix the turn counter....
 		randomCard();
 		var currentCard = $('.back').css('background');
 		var cardClicked = $(this).attr('class');
