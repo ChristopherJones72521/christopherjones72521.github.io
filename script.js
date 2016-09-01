@@ -46,9 +46,26 @@ function cardFlip(){
 	$('#countTurn').html(turn + "/25");
 }
 
+function endOfRound(){
+	createDistribution();
+	$('html, body').delay(1000).animate({
+		scrollTop: $("#results").offset().top
+	},1000);
+	$('#finalScore').html(totalScore);
+	$('#Percentile').html(String(Math.round(totalChance*100)) + "% of other people!");
+	// create a switch to add the appropriate suffix to the number 
+}
+
+
+function check(){
+	if(turn === 25){
+		endOfRound();
+	}
+}
+
 // When a card is selected, this runs all necessary functions
 $('.tinyCard').click(function(){
-	if(turn<25){ // Fix the turn counter....
+	if(turn<25){
 		randomCard();
 		var currentCard = $('.back').css('background');
 		var cardClicked = $(this).attr('class');
@@ -56,19 +73,9 @@ $('.tinyCard').click(function(){
 		var thisCard = String(cardClicked.match(regex));
 		var psychicCard = String(currentCard.match(regex));
 		compareSelection(thisCard, psychicCard);
-		// calcProbability();
 		cardFlip();
-		// After final turn, display result and scroll down
-		} else {
-			createDistribution();
-			$('html, body').delay(100).animate({
-				scrollTop: $("#results").offset().top
-			},1000);
-			$('#finalScore').html(totalScore);
-			$('#Percentile').html(String(Math.round(totalChance*100)) + "% of other people!");
-			// everytime there is a click, 100% of the answer is added.
-			// create a switch to add the appropriate suffix to the number 
-		}
+		check();
+	}
 })
 
 // calculates n!
@@ -98,12 +105,9 @@ function createDistribution(){
 		}
 	}
 	calcScores();
-	// The percentile will be += the percentages. Run up until the total score and increment. 
 }
 
-if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
-  {
+// Browser check
+if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )){
       alert('This application will not run on IE. Use Chrome or Firefox like an adult');
-  } else {
-  	alert("Not IE");
-  }
+} 
