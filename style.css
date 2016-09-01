@@ -156,6 +156,7 @@ body {
 	transform: rotateY(180deg);
 }
 
+/* An attempt at IE compatability */
 /*.flip-container:hover .flipper .back, .flip-container.hover .flipper .back, .flip-container.flip .flipper .back {
 	-webkit-transform: rotateY(0deg);
 	-moz-transform: rotateY(0deg);
@@ -170,17 +171,17 @@ body {
 
 /* flip speed goes here */
 .flipper {
-	transition: 1.6s;
-	-webkit-transition: 1.6s;
+	transition: 1.0s;
+	-webkit-transition: 1.0s;
 	-webkit-transform-style: preserve-3d;
 
-	-moz-transition: 1.6s;
+	-moz-transition: 1.0s;
 	-moz-transform-style: preserve-3d;
   
-    -o-transition: 1.6s;
+    -o-transition: 1.0s;
 	-o-transform-style: preserve-3d;
 
-	transition: 1.6s;
+	transition: 1.0s;
 	transform-style: preserve-3d;
 
 	position: relative;
@@ -192,7 +193,7 @@ body {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
     -o-backface-visibility: hidden;
-/*    transition: 1.6s;
+/*    transition: 1.6s; /* An attempt at IE compatability
 	transform-style: preserve-3d;*/
 	position: absolute;
 	top: 0;
