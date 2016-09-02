@@ -121,3 +121,8 @@ body {
 	margin: 0 auto;
 	padding: 5%;
 }
+
+.description {
+	position: relative;
+	/*margin: 10px;*/
+}

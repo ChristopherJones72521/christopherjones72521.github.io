@@ -30,6 +30,7 @@ function randomCard(){
 		var cardImage = cards[Math.floor(Math.random() * 5)];
 		return cardImage;
 	}
+	// Resize cards according to viewer window width (broken figure out)
 	if($(window).width() > 1000){
 		$('.back').css({'background': randomizer, "backgroundSize": "200px 300px",
 		"backgroundRepeat" : "no-repeat"})
@@ -61,6 +62,7 @@ function endOfRound(){
 	$('#finalScore').html(totalScore);
 	$('#Percentile').html(String(Math.round(totalChance*100)) + "% of other people!");
 	// create a switch to add the appropriate suffix to the number 
+	resultDescription();
 }
 
 // Begin game when clicked
@@ -125,3 +127,25 @@ function createDistribution(){
 if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )){
       alert('This application will not run on IE. Use Chrome or Firefox like an adult');
 } 
+
+function resultDescription(){
+	var finalPercentile = Math.round(totalChance * 100);
+	console.log(finalPercentile);
+	if((totalChance * 100) <= 20){
+		$('.description').html("You're cursed!");
+	} else if(20 < (finalPercentile) <= 50) {
+		$('.description').html("You're unlucky!");
+	} else if(50 < (finalPercentile) <= 60) {
+		$('.description').html("You're average!");
+	} else if(60 < (finalPercentile) <= 75) {
+		$('.description').html("You're intuitive!");
+	} else if(75 < (finalPercentile) <= 85) {
+		$('.description').html("You're clairvoyant!");
+	} else if(85 < (finalPercentile) <= 95) {
+		$('.description').html("You're Nostradamus!");
+	} else if(95 < (finalPercentile) <= 100) {
+		$('.description').html("You're God!");
+	} else {
+		alert("There has been an error");
+	}
+}

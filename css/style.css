@@ -94,3 +94,8 @@ body {
 	margin: 0 auto;
 	padding: 100px;
 }
+
+.description {
+	position: relative;
+	/*margin: 10px;*/
+}
