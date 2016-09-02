@@ -47,8 +47,9 @@ function cardFlip(){
 }
 
 function endOfRound(){
+	turn = "end";
 	createDistribution();
-	$('html, body').delay(1000).animate({
+	$('html, body').delay(2000).animate({
 		scrollTop: $("#results").offset().top
 	},1000);
 	$('#finalScore').html(totalScore);
@@ -65,7 +66,7 @@ function check(){
 
 // When a card is selected, this runs all necessary functions
 $('.tinyCard').click(function(){
-	if(turn<25){
+	if(turn<=25){
 		randomCard();
 		var currentCard = $('.back').css('background');
 		var cardClicked = $(this).attr('class');
