@@ -14,7 +14,7 @@ body {
 }
 
 #play {
-	display: hidden;
+	display: none;
 }
 
 #description {
