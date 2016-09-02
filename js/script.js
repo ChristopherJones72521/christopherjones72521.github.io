@@ -144,7 +144,7 @@ function resultDescription(){
 	} else if(85 < (finalPercentile) <= 95) {
 		$('.description').html("You're Nostradamus!");
 	} else if(95 < (finalPercentile) <= 100) {
-		$('.description').html("You're God!");
+		$('.description').html("Are you from the Matrix?");
 	} else {
 		alert("There has been an error");
 	}
