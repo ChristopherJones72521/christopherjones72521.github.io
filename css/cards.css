@@ -1,0 +1,45 @@
+/* Card image definitions */
+
+.star.tinyCard {
+	background-image: url("../images/starCard.svg");
+}
+
+.square.tinyCard {
+	background-image: url("../images/squareCard.svg");
+}
+
+.circle.tinyCard {
+	background-image: url("../images/circleCard.svg");
+}
+
+.wave.tinyCard {
+	background-image: url("../images/waveCard.svg");
+}
+
+.cross.tinyCard {
+	background-image: url("../images/crossCard.svg");
+}
+
+.question.card {
+	background-image: url("../images/questionCard.svg");
+}
+
+.star.card {
+	background-image: url("../images/starCard.svg");
+}
+
+.square.card {
+	background-image: url("../images/squareCard.svg");
+}
+
+.circle.card {
+	background-image: url("../images/circleCard.svg");
+}
+
+.wave.card {
+	background-image: url("../images/waveCard.svg");
+}
+
+.cross.card {
+	background-image: url("../images/crossCard.svg");
+}

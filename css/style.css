@@ -94,47 +94,47 @@ body {
 }
 
 .star.tinyCard {
-	background-image: url("starCard.svg");
+	background-image: url("../images/starCard.svg");
 }
 
 .square.tinyCard {
-	background-image: url("squareCard.svg");
+	background-image: url("../images/squareCard.svg");
 }
 
 .circle.tinyCard {
-	background-image: url("circleCard.svg");
+	background-image: url("../images/circleCard.svg");
 }
 
 .wave.tinyCard {
-	background-image: url("waveCard.svg");
+	background-image: url("../images/waveCard.svg");
 }
 
 .cross.tinyCard {
-	background-image: url("crossCard.svg");
+	background-image: url("../images/crossCard.svg");
 }
 
 .question.card {
-	background-image: url("questionCard.svg");
+	background-image: url("../images/questionCard.svg");
 }
 
 .star.card {
-	background-image: url("starCard.svg");
+	background-image: url("../images/starCard.svg");
 }
 
 .square.card {
-	background-image: url("squareCard.svg");
+	background-image: url("../images/squareCard.svg");
 }
 
 .circle.card {
-	background-image: url("circleCard.svg");
+	background-image: url("../images/circleCard.svg");
 }
 
 .wave.card {
-	background-image: url("waveCard.svg");
+	background-image: url("../images/waveCard.svg");
 }
 
 .cross.card {
-	background-image: url("crossCard.svg");
+	background-image: url("../images/crossCard.svg");
 }
 
 /*------------------[Card flipping related CSS]-------------------------*/
@@ -205,7 +205,7 @@ body {
 	z-index: 2;
 	/* for firefox 31 */
 	transform: rotateY(0deg);
-	background: url("questionCard.svg") 0 0 no-repeat;
+	background: url("../images/questionCard.svg") 0 0 no-repeat;
 	background-size: 200px 300px;
 	background-repeat: no-repeat;
 }
@@ -217,7 +217,7 @@ body {
     -o-transform: rotateY(-180deg);
 	transform: rotateY(-180deg);
 
-	background: url("questionCard.svg");
+	background: url("../images/questionCard.svg");
 	background-size: 200px 300px;
 	background-repeat: no-repeat;
 }

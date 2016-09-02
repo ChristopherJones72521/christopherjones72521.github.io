@@ -26,7 +26,7 @@ function compareSelection(selectedCardClass, currentCardClass){
 // Draws card at random: Changes background property of .back class each click
 function randomCard(){
 	function randomizer(){
-		var cards = ['url("starCard.svg")', 'url("squareCard.svg")', 'url("circleCard.svg")', 'url("waveCard.svg")', 'url("crossCard.svg")'];
+		var cards = ['url("./images/starCard.svg")', 'url("./images/squareCard.svg")', 'url("./images/circleCard.svg")', 'url("./images/waveCard.svg")', 'url("./images/crossCard.svg")'];
 		var cardImage = cards[Math.floor(Math.random() * 5)];
 		return cardImage;
 	}
