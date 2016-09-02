@@ -133,17 +133,17 @@ function resultDescription(){
 	console.log(finalPercentile);
 	if((totalChance * 100) <= 20){
 		$('.description').html("You're cursed!");
-	} else if(20 < (finalPercentile) <= 50) {
+	} else if(20 < finalPercentile && finalPercentile <= 50) {
 		$('.description').html("You're unlucky!");
-	} else if(50 < (finalPercentile) <= 60) {
+	} else if(50 < finalPercentile && finalPercentile <= 60) {
 		$('.description').html("You're average!");
-	} else if(60 < (finalPercentile) <= 75) {
+	} else if(60 < finalPercentile && finalPercentile <= 75) {
 		$('.description').html("You're intuitive!");
-	} else if(75 < (finalPercentile) <= 85) {
+	} else if(75 < finalPercentile && finalPercentile <= 85) {
 		$('.description').html("You're clairvoyant!");
-	} else if(85 < (finalPercentile) <= 95) {
+	} else if(85 < finalPercentile && finalPercentile <= 95) {
 		$('.description').html("You're Nostradamus!");
-	} else if(95 < (finalPercentile) <= 100) {
+	} else if(95 < finalPercentile && finalPercentile <= 100) {
 		$('.description').html("Are you from the Matrix?");
 	} else {
 		alert("There has been an error");
