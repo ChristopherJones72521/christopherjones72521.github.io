@@ -30,8 +30,14 @@ function randomCard(){
 		var cardImage = cards[Math.floor(Math.random() * 5)];
 		return cardImage;
 	}
-	$('.back').css({'background': randomizer, "backgroundSize": "200px 300px",
-	"backgroundRepeat" : "no-repeat"})
+	if($(window).width() > 1000){
+		$('.back').css({'background': randomizer, "backgroundSize": "200px 300px",
+		"backgroundRepeat" : "no-repeat"})
+	} else {
+		$('.back').css({'background': randomizer, "backgroundSize": "400px 600px",
+		"backgroundRepeat" : "no-repeat"})
+	}
+	// alert("The window is " + $(window).width() + "pixels in width.");
 }
 
 // Triggers card flip and increments turn
@@ -47,7 +53,7 @@ function cardFlip(){
 }
 
 function endOfRound(){
-	turn = "end";
+	turn = "end"; // Bad code, but it works...
 	createDistribution();
 	$('html, body').delay(2000).animate({
 		scrollTop: $("#results").offset().top
@@ -56,6 +62,13 @@ function endOfRound(){
 	$('#Percentile').html(String(Math.round(totalChance*100)) + "% of other people!");
 	// create a switch to add the appropriate suffix to the number 
 }
+
+// Begin game when clicked
+$("#play").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#mainbody").offset().top
+    }, 2000);
+});
 
 
 function check(){

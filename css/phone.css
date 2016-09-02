@@ -1,0 +1,123 @@
+/* Mobile Configuration */
+
+/* So I prefer camelCase... */
+
+body {
+	margin: 0;
+	background-color: #C4B8F5;
+	font-family: 'Oxygen', Helvetica, sans-serif;
+}
+
+#upperElements {
+	position: relative;
+	float: left;
+	padding: 50px;
+	height: 100vh;
+}
+
+#title {
+	position: relative;
+	margin: 50px;
+	text-align: center;
+	color: white;
+	font-size: 5em;
+}
+
+#description {
+	position: relative;
+	width: 90%;
+	float: left;
+	text-align: justify;
+	font-size: 3em;
+	margin: 50px;
+	margin-top: 0;
+}
+
+#play {
+	position: relative;
+	display: block;
+	width: 50%;
+	margin: 1000px auto;
+	text-align: center;
+	font-size: 3em;
+	padding: 50px;
+	color: #FFF;
+	background-color: #4324F0;
+	border: none;
+	outline: none;
+}
+
+#mainbody {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100vh;
+}
+
+.score {
+	position: relative;
+	margin: 50px;
+	margin-bottom: 100px;
+	font-size: 3em;
+	float: left;
+	clear: both;
+	color: #FFF;
+}
+
+#focusCard {
+	position: relative;
+	margin: 50px auto;
+	clear: both;
+}
+
+.card {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: 400px 600px;
+	width: 400px;
+	height: 600px;
+	margin: 50px auto;
+}
+
+#turnCounter { /* Fix me! attach to focus card div */
+	text-align: center;
+	font-size: 3em;
+	margin-top: -40px;
+	margin-bottom: 100px;
+	width: 100%;
+}
+
+#tinyContainer {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.tinyCard{
+	position: relative;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 100px 150px;
+	width: 100px;
+	height: 150px;
+	margin: 0 auto;
+	float: left;
+}
+
+#results {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100vh;
+	background-color: #F0F25A;
+	padding-top: 100px;
+}
+
+#resultSquare {
+	position: relative;
+	width: 75%;
+	height: 400px;
+	border: 10px solid #000;
+	margin: 0 auto;
+	padding: 5%;
+}

@@ -6,6 +6,26 @@ body {
 	font-family: 'Oxygen', Helvetica, sans-serif;
 }
 
+#title {
+	margin: 50px;
+	color: white;
+	font-size: 3em;
+	position: relative;
+}
+
+#play {
+	display: hidden;
+}
+
+#description {
+	width: 33%;
+	position: relative;
+	float: left;
+	font-size: 18px;
+	margin: 50px;
+	margin-top: 0;
+}
+
 #mainbody {
 	position: relative;
 	width: 100%;
@@ -16,20 +36,13 @@ body {
 	margin: 50px auto;
 }
 
-#title {
-	margin: 50px;
-	color: white;
-	font-size: 3em;
+.card {
 	position: relative;
-}
-
-#description {
-	width: 33%;
-	position: relative;
-	float: left;
-	font-size: 18px;
-	margin: 50px;
-	margin-top: 0;
+	background-repeat: no-repeat;
+	background-size: 200px 300px;
+	width: 200px;
+	height: 300px;
+	margin: 50px auto;
 }
 
 #turnCounter {
@@ -50,8 +63,18 @@ body {
 
 #tinyContainer {
 	position: relative;
-	width: 800px;
+	width: 80%;
 	margin: 0 auto;
+}
+
+.tinyCard{
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: 100px 150px;
+	width: 100px;
+	height: 150px;
+	margin: 0 30px;
+	float: left;
 }
 
 #results {
@@ -70,23 +93,4 @@ body {
 	border: 10px solid #000;
 	margin: 0 auto;
 	padding: 100px;
-}
-
-.card {
-	position: relative;
-	background-repeat: no-repeat;
-	background-size: 200px 300px;
-	width: 200px;
-	height: 300px;
-	margin: 50px auto;
-}
-
-.tinyCard{
-	position: relative;
-	background-repeat: no-repeat;
-	background-size: 100px 150px;
-	width: 100px;
-	height: 150px;
-	margin: 0 30px;
-	float: left;
 }
