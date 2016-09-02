@@ -131,9 +131,9 @@ if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == t
 function resultDescription(){
 	var finalPercentile = Math.round(totalChance * 100);
 	console.log(finalPercentile);
-	if((totalChance * 100) <= 20){
+	if((totalChance * 100) <= 25){
 		$('.description').html("You're cursed!");
-	} else if(20 < finalPercentile && finalPercentile <= 50) {
+	} else if(25 < finalPercentile && finalPercentile <= 50) {
 		$('.description').html("You're unlucky!");
 	} else if(50 < finalPercentile && finalPercentile <= 60) {
 		$('.description').html("You're average!");
