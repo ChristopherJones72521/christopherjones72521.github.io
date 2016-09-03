@@ -29,6 +29,7 @@ body {
 
 #description {
 	position: relative;
+	font-style: 400;
 	width: 90%;
 	float: left;
 	color: white;
