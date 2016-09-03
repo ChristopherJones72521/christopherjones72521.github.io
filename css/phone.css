@@ -41,15 +41,22 @@ body {
 #play {
 	position: relative;
 	display: block;
+	border: 1px solid #fff !important;
+	border-radius: 6px;
 	width: 50%;
 	margin: 1000px auto;
 	text-align: center;
 	font-size: 3em;
 	padding: 50px;
-	color: #FFF;
-	background-color: #4324F0;
+	color: white;
+	background-color: transparent;
 	border: none;
 	outline: none;
+}
+
+#play:hover {
+	background-color: #FFF;
+	opacity: 0.3;
 }
 
 #mainbody {
