@@ -29,12 +29,12 @@ body {
 
 #description {
 	position: relative;
-	/*font-weight: 400;*/
+	font-weight: 400;
 	width: 90%;
 	float: left;
 	color: white;
 	text-align: justify;
-	font-size: 3em;
+	font-size: 2em;
 	margin: 50px;
 	margin-top: 0;
 }
