@@ -29,7 +29,7 @@ body {
 
 #description {
 	position: relative;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	width: 90%;
 	float: left;
 	color: white;
