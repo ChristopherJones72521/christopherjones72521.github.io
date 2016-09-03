@@ -116,7 +116,7 @@ body {
 #resultSquare {
 	position: relative;
 	width: 75%;
-	height: 75vh;
+	height: auto;
 	border: 10px solid #000;
 	margin: 0 auto;
 	padding: 5%;
