@@ -130,7 +130,7 @@ if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == t
 
 function resultDescription(){
 	var cursedDesc = "If you clicked one button the entire time you would have done better. You don't just have bad luck, you're cursed. However, you were able to consistently predict the wrong answers! Just do the opposite of what you think you should do!";
-	var unluckyDesc = "Remeber that chain letter you broke in the 7th grade? WELL THIS IS WHAT HAPPENS TO PEOPLE WHO DON'T FOLLOW THROUGH! Write those letters and try again.";
+	var unluckyDesc = "Remember that chain letter you broke in the 7th grade? WELL THIS IS WHAT HAPPENS TO PEOPLE WHO DON'T FOLLOW THROUGH! Write those letters and try again.";
 	var averageDesc	= "Congratulations, your mediocre! You've achieved the same odds as a cat walking across your keyboard. Just think, being average means there are lots of other people just like you! Think of all the friends you could have!";
 	var intuitiveDesc =	"You have good instincts! You tend to understand things you can't explain and have no problem trusting your gut. I can't say you'll win the lottery anytime soon. But you might consider the stock market.";
 	var clairvoyantDesc = "Your ability to sense goes beyond empathy. You've enjoyed inexplicable luck all your life and may not have even realized it. Xavier's School for Gifted Youngsters is waiting for you! Dig out that unitard and think of a cool superhero name!";
