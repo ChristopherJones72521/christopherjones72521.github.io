@@ -95,7 +95,10 @@ body {
 	padding: 100px;
 }
 
-.description {
+#resultHeading {
 	position: relative;
-	/*margin: 10px;*/
+}
+
+.resultdescription {
+	position: relative;
 }

@@ -116,13 +116,18 @@ body {
 #resultSquare {
 	position: relative;
 	width: 75%;
-	height: 400px;
+	height: 75vh;
 	border: 10px solid #000;
 	margin: 0 auto;
 	padding: 5%;
 }
 
-.description {
+#resultHeading {
 	position: relative;
-	/*margin: 10px;*/
+	font-size: 3em;
+}
+
+#resultdescription {
+	position: relative;
+	font-size: 2em;
 }
