@@ -25,6 +25,26 @@
 </script>
 </head>
 <body>
+<!-- Facebook SDK -->
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '304366329927751',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Beginning of app code -->
 	<div id="upperElements">
 		<h1 id="title">Are you clairvoyant?</h1>
 		<div id="description">Zener cards are cards used to conduct experiments for extrasensory perception (ESP), most often clairvoyance. The odds of guessing are 20%, if you exceed this number, you may possess a high degree of intuition or clairvoyant ability. </br></br>If you consistently choose over 20%, would you email next week's lottery numbers?</div>
@@ -63,8 +83,16 @@
 			<h2>You're more clairvoyant than <span id="Percentile"></span></h2>
 			<h2 id="resultHeading"></h2>
 			<h3 id="resultDescription"></h3>
+			<!-- Like on Facebook -->
+			<div
+			  class="fb-like"
+			  data-share="true"
+			  data-width="450"
+			  data-show-faces="true">
+			</div>
+			<!-- Share button -->
+			<button id="shareBtn">Share On Facebook</button>
 		</div>
-
 	</div>
 
 

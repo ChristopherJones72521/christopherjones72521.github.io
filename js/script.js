@@ -170,3 +170,16 @@ function resultDescription(){
 	}
 	
 }
+
+// Facebook share code
+document.getElementById('shareBtn').onclick = function() {
+    FB.ui({
+        display: 'popup',
+        method: 'share',
+        title: "I'm more clairvoyant than " + String(Math.round(totalChance*100) + " Of other people! How about you?",
+        description: 'How clairvoyant are you? Find out now!',
+    link: 'http://clairvoyant.wunderkind.us',
+    picture: 'THIS PICTURE WILL BE THE FACEBOOK SHARE IMAGE',
+    href: 'http://clairvoyant.wunderkind.us',
+
+  }, function(response){});
