@@ -182,4 +182,5 @@ document.getElementById('shareBtn').onclick = function() {
     picture: 'THIS PICTURE WILL BE THE FACEBOOK SHARE IMAGE',
     href: 'http://clairvoyant.wunderkind.us',
 
-  }, function(response){});
+  }, function(response){})
+};
