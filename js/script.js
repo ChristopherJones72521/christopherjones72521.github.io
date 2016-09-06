@@ -176,7 +176,7 @@ document.getElementById('shareBtn').onclick = function() {
     FB.ui({
         display: 'popup',
         method: 'share',
-        title: "I'm more clairvoyant than " + String(Math.round(totalChance*100)) + " Of other people! How about you?",
+        title: "I'm more clairvoyant than " + String(Math.round(totalChance*100)) + "% of other people! How about you?",
         description: 'How clairvoyant are you? Find out now!',
     link: 'http://clairvoyant.wunderkind.us',
     picture: 'http://clairvoyant.wunderkind.us/images/FacebookPreview.png',
