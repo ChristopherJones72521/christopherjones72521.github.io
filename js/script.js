@@ -179,7 +179,7 @@ document.getElementById('shareBtn').onclick = function() {
         title: "I'm more clairvoyant than " + String(Math.round(totalChance*100)) + " Of other people! How about you?",
         description: 'How clairvoyant are you? Find out now!',
     link: 'http://clairvoyant.wunderkind.us',
-    picture: './images/Facebookpreview.png',
+    picture: '../images/FacebookPreview.png',
     href: 'http://clairvoyant.wunderkind.us',
 
   }, function(response){});
