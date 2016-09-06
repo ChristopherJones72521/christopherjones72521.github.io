@@ -145,11 +145,11 @@ function resultDescription(){
 		$('#resultHeading').html("You're unlucky!");
 		$('#resultDescription').html(unluckyDesc);
 	} 
-	else if(50 < finalPercentile && finalPercentile <= 60) {
+	else if(50 < finalPercentile && finalPercentile <= 65) {
 		$('#resultHeading').html("You're average!");
 		$('#resultDescription').html(averageDesc);
 	} 
-	else if(60 < finalPercentile && finalPercentile <= 75) {
+	else if(65 < finalPercentile && finalPercentile <= 75) {
 		$('#resultHeading').html("You're intuitive!");
 		$('#resultDescription').html(intuitiveDesc);
 	} 
@@ -182,5 +182,5 @@ document.getElementById('shareBtn').onclick = function() {
     picture: './images/Facebookpreview.png',
     href: 'http://clairvoyant.wunderkind.us',
 
-  }, function(response){})
-};
+  }, function(response){});
+}

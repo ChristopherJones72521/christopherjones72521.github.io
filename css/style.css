@@ -111,4 +111,19 @@ body {
 
 #resultdescription {
 	position: relative;
+	margin-bottom: 20px;
+}
+
+#shareBtn {
+	position: absolute;
+	border: 1px solid #000 !important;
+	border-radius: 6px;
+	margin: 10px auto;
+	text-align: center;
+	font-size: 2em;
+	padding: 5px;
+	color: #000;
+	background-color: transparent;
+	border: none;
+	outline: none;
 }
